@@ -124,3 +124,26 @@ body{
     background-position: center;
     margin-top: 25px;
 }
+.parent{
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 15px;
+}
+.child{
+    width: 323px;
+    height: 323px;
+    border: 1px solid black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.7ms ease;
+    overflow: hidden;
+}
+.child:hover{
+    transform: scale(1.1) ;
+}
+.img1{
+    background-image: url("https://images.samsung.com/is/image/samsung/assets/in/mx_2510/S25_featured_cards_560x560.jpg?$560_560_JPG$");
+}
