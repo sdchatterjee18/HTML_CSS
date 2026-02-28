@@ -150,12 +150,10 @@
     width: 85%;
     margin-left:20px;
     margin-right:20px;
-    background-color:white;
-    display: flex;
+    background-color:white;   
     background-color: white;
     padding: 20px;
     border-radius:10px;
-    justify-content: center;
 }
 
 .img-div{
@@ -182,6 +180,15 @@
     font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
     font-weight:650;
 }
+.for-button button{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    height: 35px;
+    width: 130px;
+    border: 0px;
+    font-size: 15px;
+}
 .left img{
     object-fit: cover;
     display:block;
@@ -191,4 +198,212 @@
 }
 .left img:hover{
     transform: scale(1.05);
+}
+.section{
+    height: 320px;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    gap:20px;
+}
+.division{
+    height:100%;
+    width:25%;
+    background-color: rgb(247, 247, 247);
+}
+.img-section{
+    width: 100%;
+    height:50%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    overflow: hidden;
+}.img-section img{
+    height:150px;
+    width:150px;
+    transition: transform 1s ease;
+}
+.img-section img:hover{
+    transform:scale(1.1)
+}
+.text-section{
+    width: 100%;
+    height:50%;
+    padding-left: 40px;
+    padding-top:30px;
+}
+.txt{
+    font-size: 20px;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    font-weight:650;
+}
+.next{
+    width:100%;
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 247, 247);
+    font-size: 30px;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    font-weight:650;
+    padding-top:40px;
+}
+.main2{
+    width:100%;
+    height:auto;
+    background-color:rgb(247, 247, 247);
+    display: flex;
+    justify-content:center;
+    gap: 20px;
+
+}
+.sub-main2{
+    width: 340px;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.img-sec2{
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 10px;
+    overflow:hidden;
+}
+.img-sec2 img{
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+.img-sec2 img:hover{
+    transform: scale(1.05);
+}
+.text-sec2big{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    font-weight:650;
+    align-items: center;
+}
+.text-sec2small{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+.next2{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+    font-size: 30px;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    font-weight:650;
+    
+}
+.unknown{
+    height: 450px;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+.section2{
+    height: auto;
+    width:100%;
+    display:flex;
+    gap: 45px;
+    justify-content: center;
+    background-color: rgb(247, 247, 247);
+}
+.division2{
+    height: 200px;
+    width:17%;
+}
+
+.sub-div1{
+    width: 100%;
+    height:25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color:rgb(114, 114, 114)
+    
+}
+.sub-div1 i{
+    transition: 1s ease;
+}
+.sub-div1 i:hover{
+    color: black;
+}
+.sub-div2{
+    width: 100%;
+    height:30%;
+    font-size: 21px;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    font-weight:650;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub-div3{
+    width: 100%;
+    height:45%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 16px;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+}
+.footer{
+    height: auto;
+    width: 100%;
+    background-color:black;
+    display: flex;
+    gap: 20px;
+}
+.left-footer{
+    height: auto;
+    width: 70%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.left-sub-footer{
+    height: auto;
+    width: 25%;
+    color: white;
+    padding-left: 10px;
+}
+.top{
+    height: 30px;
+    width: 100%;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    font-weight:650;
+}
+.right-footer{
+    width: 30%;
+    height: auto;
+}
+.footer-list{
+    list-style-type:none;
+    font-family:"Mi Sans", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif; 
+    color: rgb(83, 83, 83);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 13px;
 }
