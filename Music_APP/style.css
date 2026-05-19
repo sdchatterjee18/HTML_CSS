@@ -1,0 +1,151 @@
+body
+{
+    margin:0;
+}
+.screen
+{
+    height: 100vh;
+    width: 100%;
+    box-sizing:border-box;
+    background: #d3e1f7;
+    position: relative;
+}
+.mobile_screen
+{
+    box-sizing: border-box;
+    padding: 25px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 90%;
+    width: 20%;
+    border-radius: 35px;
+    background: rgb(232, 240, 252);
+}
+.header
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.common_header_button
+{
+    height: 35px;
+    width: 35px;
+    border: 2px solid rgb(207, 220, 240);
+    border-radius: 100%;
+    background-color: transparent;
+    color:  grey;
+     box-shadow:
+        -12px -12px 22px rgba(255, 255, 255, 0.95), 
+         12px 12px 22px rgba(0, 0, 0, 0.28);
+
+}
+.song_text
+{
+    display: flex;
+    flex: 1;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #b8bec9;
+}
+.song_image_div_outside
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.song_image_div_inside
+{
+    margin-top: 30px;
+    height: 180px;
+    width: 180px;
+    border: 6px solid rgb(232, 240, 252);
+    border-radius: 100%;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+         box-shadow:
+        -12px -12px 22px rgba(255, 255, 255, 0.95), 
+         12px 12px 22px rgba(0, 0, 0, 0.28);
+
+}
+.song_details_div   
+{
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#song_name
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(92, 105, 130);
+}
+#artist_name
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(160, 170, 190);
+}
+.duration_div
+{
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    margin-top: 30px;
+}
+.song_control_div
+{
+    padding: 20px 0px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.contoler_button
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 2px solid rgb(207, 220, 240);
+    box-shadow:
+        -12px -12px 22px rgba(255, 255, 255, 0.95), 
+         12px 12px 22px rgba(0, 0, 0, 0.28);
+         
+}
+#pause
+{
+    background :rgb(130, 164, 255);
+    color: white;
+}
+#previous
+{
+    background: transparent;
+    color: grey;
+}
+#next
+{
+    background: transparent;
+    color: grey;
+}
