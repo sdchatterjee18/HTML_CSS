@@ -254,4 +254,72 @@ return 0;
 }
 
 ----------------------------------------------------
+DECODE STUFFED DATA
 
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+int i,j,k,l,n,count;
+char s[100],cs[50];
+printf("\nENTER THESTUFFED STRING:");
+gets(s);
+n=strlen(s);
+printf("\nTHESTRINGIS\n");
+for(i=0;i<n;)
+{
+if(s[i]=='$')
+{
+i++;
+count=(s[i]-'0')*10+(s[i+1]-'0');
+if(count<5)
+{
+printf("INVALIDE MESSAGE");
+exit(1);
+}
+while(count>0)
+{
+printf("%c",s[i+2]);
+count--;
+}
+i=i+3;
+}
+else
+{
+printf("%c",s[i]);
+i++;
+}
+}
+return 0;
+}
+
+---------------------------------
+
+BIT SUFFERING
+
+#include<stdio.h>
+int main()
+{
+  char data[100];
+  int i,count=0;
+  printf("Enter bit string :");
+  scanf("%s", data);
+  printf("After bit suffering :");
+  for(i=0; data[i] != '\0'; i++)
+  {
+     printf("%c",data[i]);
+     if(data[i] == '1')
+       count++ ;
+     else
+       count=0;
+     if(count == 5)
+     {
+       printf("0");
+       count=0;
+     }
+  }
+  return 0;
+}
+
+--------------------------------------------------------------
