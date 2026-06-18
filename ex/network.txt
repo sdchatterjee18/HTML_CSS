@@ -1,3 +1,101 @@
+TCP CLIENT
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<sys/un.h>
+#define MAXSIZE 100
+#define PATH "/tmp/mysock"
+int main()
+{
+int sd,cv, r;
+char buffer[MAXSIZE];
+struct sockaddr_un myaddr;
+sd = socket(AF_UNIX, SOCK_STREAM, 0);
+if(sd ==-1)
+{
+perror("socket_err");
+exit(1);
+}
+myaddr.sun_family= AF_UNIX;
+strncpy(myaddr.sun_path, PATH, sizeof(PATH));
+cv= connect(sd, (struct sockaddr *)&myaddr,sizeof(myaddr));
+if(cv == -1)
+{
+perror("connect_err");
+exit(2);
+}
+printf("Enter amessage: ");
+fgets(buffer, MAXSIZE, stdin);
+write(sd, buffer,strlen(buffer));
+memset(buffer,'\0', MAXSIZE);
+r =read(sd, buffer, MAXSIZE);
+printf("Received fromserver : %s\n", buffer);
+close(sd);
+return 0;
+}
+
+-----------------------------------------------
+TCP SERVER
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<sys/un.h>
+#define MAXSIZE 100
+#define PATH "/tmp/mysock"
+int main()
+{
+int sd,bv,lv,av,r;
+char buffer[MAXSIZE];
+socklen_t l;
+struct sockaddr_un myaddr;
+unlink(PATH);
+sd=socket(AF_UNIX,SOCK_STREAM,0);
+if(sd==-1)
+{
+perror("socket_err");
+exit(1);
+}
+myaddr.sun_family=AF_UNIX;
+strncpy(myaddr.sun_path,PATH,sizeof(PATH));
+l=sizeof(myaddr);
+bv=bind(sd,(struct sockaddr*)&myaddr,l);
+if(bv==-1)
+{
+perror("bind_err");
+exit(2);
+}
+lv=listen(sd,10);
+if(lv==-1)
+{
+perror("listen_err");
+exit(3);
+}
+while(1)
+{
+printf("waiting for client request\n");
+av=accept(sd,(struct sockaddr*)&myaddr,&l);
+if(av==-1)
+{
+perror("accept_err");
+exit(4);
+}
+memset(buffer,'\0',MAXSIZE);
+r=read(av,buffer,MAXSIZE);
+write(av,buffer,r);
+close(av);
+}
+return 0;
+}
+
+--------------------------------
 DATE AND TIME (Client)
 
 #include<stdio.h>
@@ -323,3 +421,54 @@ int main()
 }
 
 --------------------------------------------------------------
+CRC
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char data[50], divisor[20];
+    char temp[50], rem[20];
+    int i, j, data_len, div_len;
+
+    printf("Enter Data: ");
+    scanf("%s", data);
+
+    printf("Enter Divisor: ");
+    scanf("%s", divisor);
+
+    data_len = strlen(data);
+    div_len = strlen(divisor);
+
+    strcpy(temp, data);
+
+    for (i = 0; i < div_len - 1; i++)
+        strcat(temp, "0");
+
+    strcpy(rem, temp);
+
+    for (i = 0; i <= strlen(temp) - div_len; i++)
+    {
+        if (rem[i] == '1')
+        {
+            for (j = 0; j < div_len; j++)
+            {
+                rem[i + j] = (rem[i + j] == divisor[j]) ? '0' : '1';
+            }
+        }
+    }
+
+    printf("\nCRC Bits: ");
+    for (i = strlen(temp) - div_len + 1; i < strlen(temp); i++)
+        printf("%c", rem[i]);
+
+    printf("\nCodeword: %s", data);
+
+    for (i = strlen(temp) - div_len + 1; i < strlen(temp); i++)
+        printf("%c", rem[i]);
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------
